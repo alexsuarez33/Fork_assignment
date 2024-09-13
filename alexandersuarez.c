@@ -4,6 +4,14 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+int factorial(int input){                  //Compute factorial
+    if (input == 0 || input == 1)
+        return 1;
+    return input * factorial(input - 1);
+}
+
+int 
+
 int main() {
     pid_t child_pid;
 
