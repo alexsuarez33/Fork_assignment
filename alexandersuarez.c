@@ -4,7 +4,20 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-//compute factorial
+/*===============================================================================
+This project allows the user to specify a number of child processes to be made.
+Then the children will execute a different task and report their process and
+pid. The parent will wait for all of the children to terminate and then close
+the program
+
+Author: Alexander Suarez
+PantherID: 5740360
+===============================================================================*/
+
+//Defining the tasks the children will do
+
+//Compute factorial
+
 int factorial(int input){
     if (input == 0 || input == 1)
         return 1;
