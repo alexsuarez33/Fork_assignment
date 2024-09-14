@@ -80,7 +80,7 @@ int main() {
                 int factor = rand() % 9;
                 printf("Child %d (PID: %d) is computing the factorial of %d.\n", i, getpid(), factor);
                 int result = factorial(factor);
-                printf("Child %d (PID: %d) completed its task of finding the factorial of %d = %d", i, getpid(), factor, result);
+                printf("Child %d (PID: %d) completed its task of finding the factorial of %d = %d.\n", i, getpid(), factor, result);
             }
             else if (i == 2){
                 //print prime numbers up to 20
