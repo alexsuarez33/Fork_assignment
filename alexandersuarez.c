@@ -73,8 +73,6 @@ int main() {
             exit(EXIT_FAILURE);
         }
         else if (child_pid == 0){
-            printf("Child %d (PID: %d) created.\n", i, getpid());
-
             if (i == 1){
                 //Compute factorial of a random number between 1 and 8
                 int factor = rand() % 9;
@@ -89,12 +87,14 @@ int main() {
                 printPrimes(20);
             }
             else if (i == 3){
+                //calculate 2 to the power of n
                 int power = rand() % 10;
                 printf("Child %d (PID: %d) is computing two to the power of %d. \n", i, getpid(), power);
                 int result = twoPower(power);
                 printf("Child %d (PID: %d) finished computing 2 to the power of %d: %d.\n", i, getpid(), power, result);
             }
             else if (i == 4){
+                //find perimiter of a rectangle
                 int length = rand() % 100;
                 int width = rand() % 50;
                 printf("Child %d (PID: %d) is calculating the perimiter of a rectangle of length %d, and width %d.\n", i, getpid(), length, width);
@@ -106,6 +106,7 @@ int main() {
         }
     }
 
+    //Parent wait for all children to finish
     for (int i = 1; i <= children; i++){
         wait(NULL);
     }
